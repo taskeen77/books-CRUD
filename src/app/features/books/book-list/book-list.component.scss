@@ -1,0 +1,110 @@
+// .book-list-container {
+//   font-family: 'Segoe UI', sans-serif;
+
+//   .section-title {
+//     font-weight: 600;
+//     font-size: 1.7rem;
+//   }
+
+//   .btn-brown {
+//     background-color: #5e4033;
+//     border: none;
+
+//     &:hover {
+//       background-color: #4b3227;
+//     }
+//   }
+
+//   th{
+//     background-color: #5d4037;
+//     padding: 1.2rem;
+//     color: white;
+//     font-size: 1.1rem;
+//   }
+//   .table-brown {
+//     background-color: #4b3227;
+//     color: white;
+//   }
+
+//   .icon-btn {
+//     background: none;
+//     border: none;
+//     padding: 0.25rem 0.4rem;
+//     cursor: pointer;
+
+//     &:hover {
+//       opacity: 0.8;
+//     }
+//   }
+
+//   .text-brown {
+//     color: #5e4033 !important;
+//   }
+
+//   .text-brown-dark {
+//     color: #3e2a21 !important;
+//   }
+// }
+
+
+.book-list-container {
+    font-family: 'Segoe UI', sans-serif;
+  
+    .section-title {
+      font-weight: 600;
+      font-size: 1.7rem;
+    }
+  
+    .btn-brown {
+      background-color: #5e4033;
+      border: none;
+  
+      &:hover {
+        background-color: #4b3227;
+      }
+    }
+  
+    .table-scroll-sm {
+      @media (max-width: 768px) {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+    }
+  
+    th {
+      background-color: #5d4037;
+      padding: 1.2rem;
+      color: white;
+      font-size: 1.1rem;
+      white-space: nowrap;
+    }
+  
+    td {
+      white-space: nowrap;
+    }
+  
+    .table-brown {
+      background-color: #4b3227;
+      color: white;
+    }
+  
+    .icon-btn {
+      background: none;
+      border: none;
+      padding: 0.25rem 0.4rem;
+      cursor: pointer;
+  
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  
+    .text-brown {
+      color: #5e4033 !important;
+    }
+  
+    .text-brown-dark {
+      color: #3e2a21 !important;
+    }
+  }
+  

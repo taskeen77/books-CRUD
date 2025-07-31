@@ -1,0 +1,136 @@
+<div class="container my-5">
+    <h2 class="mb-4 text-brown-dark text-center">
+      <i class="bi bi-bar-chart-line-fill me-2"></i> Book Analytics Dashboard
+    </h2>
+  
+    <!-- Loading Spinner -->
+    <div *ngIf="loading" class="text-center my-5">
+      <div class="spinner-border text-brown" role="status"></div>
+    </div>
+  
+    <!-- Dashboard Content -->
+    <div *ngIf="!loading && books.length > 0">
+  
+      <!-- Summary Cards -->
+      <div class="row text-center mb-4">
+        <div class="col-md-4 mb-3">
+          <div class="card shadow p-3">
+            <h6>Total Books</h6>
+            <h3 class="text-brown">{{ books.length }}</h3>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <div class="card shadow p-3">
+            <h6>Total Genres</h6>
+            <h3 class="text-brown">{{ genreLabels.length }}</h3>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <div class="card shadow p-3">
+            <h6>Total Categories</h6>
+            <h3 class="text-brown">{{ categoryLabels.length }}</h3>
+          </div>
+        </div>
+      </div>
+  
+      <!-- All Three Charts in a Single Row -->
+      <div class="row g-4 mb-4">
+        <!-- Line Chart -->
+        <div class="col-lg-4 col-md-12">
+          <div class="card shadow-sm p-3 h-100">
+            <h6 class="mb-3">
+              <i class="bi bi-graph-up me-2"></i> Yearly Publications
+            </h6>
+            <div style="height: 260px;">
+              <canvas baseChart
+                      [data]="{
+                        labels: lineChartLabels,
+                        datasets: [{
+                          label: 'Books Published',
+                          data: lineChartData,
+                          borderColor: '#5e4033',
+                          backgroundColor: '#d7ccc8',
+                          fill: true,
+                          tension: 0.4
+                        }]
+                      }"
+                      [options]="{
+                        responsive: true,
+                        plugins: { legend: { display: false } },
+                        scales: {
+                          y: { beginAtZero: true, ticks: { stepSize: 1 } }
+                        }
+                      }"
+                      type="line">
+              </canvas>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Pie Chart -->
+        <div class="col-lg-4 col-md-6">
+          <div class="card shadow-sm p-3 h-100">
+            <h6 class="mb-3">
+              <i class="bi bi-pie-chart-fill me-2"></i> Genre Distribution
+            </h6>
+            <div style="height: 260px; display: flex; justify-content: center;">
+              <canvas baseChart
+                      [data]="{
+                        labels: genreLabels,
+                        datasets: [{
+                          data: genreData,
+                          backgroundColor: ['#7c3f00','#633200','#562b00','#492201','#3e1c00']
+                        }]
+                      }"
+                      [options]="{
+                        responsive: true,
+                        plugins: {
+                          legend: { display: false },
+                          tooltip: { enabled: true }
+                        }
+                      }"
+                      type="pie">
+              </canvas>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Bar Chart -->
+        <div class="col-lg-4 col-md-6">
+          <div class="card shadow-sm p-3 h-100">
+            <h6 class="mb-3">
+              <i class="bi bi-bar-chart-steps me-2"></i> Category Statistics
+            </h6>
+            <div style="height: 260px;">
+              <canvas baseChart
+                      [data]="{
+                        labels: categoryLabels,
+                        datasets: [{
+                          data: categoryData,
+                          label: 'Books',
+                          backgroundColor: '#6d4c41'
+                        }]
+                      }"
+                      [options]="{
+                        responsive: true,
+                        plugins: { legend: { display: false } },
+                        scales: {
+                          y: { beginAtZero: true, ticks: { stepSize: 1 } }
+                        }
+                      }"
+                      type="bar">
+              </canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Back Button -->
+      <div class="d-flex justify-content-end">
+        <button class="btn btn-outline-secondary" (click)="goBack()">
+          <i class="bi bi-arrow-left me-1"></i> Back to Book List
+        </button>
+      </div>
+    </div>
+  </div>
+  

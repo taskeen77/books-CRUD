@@ -1,0 +1,33 @@
+
+  .custom-card {
+    border: none;
+    border-radius: 14px;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
+    // background-color: #fffaf6;
+  }
+  
+  .bg-brown {
+    background-color: #5d4037; // Deep brown
+    padding: 1rem;
+  }
+  
+  .btn-brown {
+    background-color: #6d4c41;
+    border-color: #6d4c41;
+  
+    &:hover {
+      background-color: #4e342e;
+      border-color: #4e342e;
+    }
+  }
+  
+  input.ng-invalid.ng-touched,
+  select.ng-invalid.ng-touched {
+    border-color: #dc3545;
+  }
+  
+  .form-label {
+    font-weight: 500;
+    color: #3e2723;
+  }
+  

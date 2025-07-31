@@ -1,0 +1,256 @@
+<!-- 
+  <div class="container py-5">
+    <div class="card custom-card">
+      <div class="card-header text-white bg-brown">
+        <h4 class="mb-0">{{ isEditMode ? 'Edit Book' : 'Add New Book' }}</h4>
+      </div>
+  
+      <div class="card-body">
+        <form (ngSubmit)="submitForm()" #form="ngForm" novalidate>
+          <div class="row g-4">
+            <div class="col-md-6">
+              <label for="title" class="form-label">Title *</label>
+              <input
+                type="text"
+                class="form-control"
+                id="title"
+                name="title"
+                required
+                [(ngModel)]="book.title"
+                #title="ngModel"
+              />
+              <div *ngIf="title.invalid && title.touched" class="text-danger">
+                Title is required.
+              </div>
+            </div>
+  
+            <div class="col-md-6">
+              <label for="author" class="form-label">Author *</label>
+              <input
+                type="text"
+                class="form-control"
+                id="author"
+                name="author"
+                required
+                [(ngModel)]="book.author"
+                #author="ngModel"
+              />
+              <div *ngIf="author.invalid && author.touched" class="text-danger">
+                Author is required.
+              </div>
+            </div>
+  
+            <div class="col-md-6">
+              <label for="genre" class="form-label">Genre</label>
+              <select
+                class="form-select"
+                id="genre"
+                name="genre"
+                [(ngModel)]="book.genre"
+              >
+                <option value="">-- Select Genre --</option>
+                <option value="Fiction">Fiction</option>
+                <option value="Non-fiction">Non-fiction</option>
+                <option value="Mystery">Mystery</option>
+                <option value="Fantasy">Fantasy</option>
+              </select>
+            </div>
+  
+            <div class="col-md-6">
+              <label for="category" class="form-label">Category *</label>
+              <select
+                class="form-select"
+                id="category"
+                name="category"
+                required
+                [(ngModel)]="book.category"
+                #category="ngModel"
+              >
+                <option value="">-- Select Category --</option>
+                <option value="Novel">Novel</option>
+                <option value="Biography">Biography</option>
+                <option value="History">History</option>
+                <option value="Science">Science</option>
+              </select>
+              <div *ngIf="category.invalid && category.touched" class="text-danger">
+                Category is required.
+              </div>
+            </div>
+  
+            <div class="col-md-6">
+              <label for="year" class="form-label">Year</label>
+              <input
+                type="number"
+                class="form-control"
+                id="year"
+                name="year"
+                [(ngModel)]="book.year"
+              />
+            </div>
+  
+            <div class="col-md-6">
+              <label for="published" class="form-label">Published Date *</label>
+              <input
+                type="date"
+                class="form-control"
+                id="published"
+                name="published"
+                required
+                [(ngModel)]="book.published"
+                #published="ngModel"
+              />
+              <div *ngIf="published.invalid && published.touched" class="text-danger">
+                Published date is required.
+              </div>
+            </div>
+          </div>
+  
+          <div class="d-flex justify-content-end gap-2 mt-4">
+            <button type="submit" class="btn btn-brown text-white" [disabled]="form.invalid">
+              <i class="bi bi-save me-1"></i> Save
+            </button>
+            <button type="button" class="btn btn-outline-secondary" (click)="cancel()">
+              <i class="bi bi-x-circle me-1"></i> Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+   -->
+
+
+   <div class="container py-5">
+    <div class="card custom-card">
+      <div class="card-header text-white bg-brown">
+        <h4 class="mb-0">{{ isEditMode ? 'Edit Book' : 'Add New Book' }}</h4>
+      </div>
+  
+      <div class="card-body">
+        <form (ngSubmit)="submitForm()" #form="ngForm" novalidate>
+          <div class="row g-4">
+            <div class="col-md-6">
+              <label for="title" class="form-label">Title *</label>
+              <input
+                type="text"
+                class="form-control"
+                id="title"
+                name="title"
+                required
+                [(ngModel)]="book.title"
+                #title="ngModel"
+              />
+              <div *ngIf="title.invalid && title.touched" class="text-danger">
+                Title is required.
+              </div>
+            </div>
+  
+            <div class="col-md-6">
+              <label for="author" class="form-label">Author *</label>
+              <input
+                type="text"
+                class="form-control"
+                id="author"
+                name="author"
+                required
+                [(ngModel)]="book.author"
+                #author="ngModel"
+              />
+              <div *ngIf="author.invalid && author.touched" class="text-danger">
+                Author is required.
+              </div>
+            </div>
+  
+            <div class="col-md-6">
+              <label for="genre" class="form-label">Genre</label>
+              <select
+                class="form-select"
+                id="genre"
+                name="genre"
+                [(ngModel)]="book.genre"
+              >
+                <option value="">-- Select Genre --</option>
+                <option>Fiction</option>
+                <option>Non-fiction</option>
+                <option>Mystery</option>
+                <option>Fantasy</option>
+                <option>Romance</option>
+                <option>Science</option>
+                <option>History</option>
+                <option>Memoir</option>
+                <option>Adventure</option>
+                <option>Autobiography</option>
+                <option>Psychological Thriller</option>
+                <option>Post-apocalyptic</option>
+                <option>Dystopian</option>
+              </select>
+            </div>
+  
+            <div class="col-md-6">
+              <label for="category" class="form-label">Category *</label>
+              <select
+                class="form-select"
+                id="category"
+                name="category"
+                required
+                [(ngModel)]="book.category"
+                #category="ngModel"
+              >
+                <option value="">-- Select Category --</option>
+                <option>Classic</option>
+                <option>Novel</option>
+                <option>Science</option>
+                <option>Biography</option>
+                <option>History</option>
+                <option>Non-fiction</option>
+                <option>Adventure</option>
+                <option>Philosophical</option>
+                <option>Mystery</option>
+                <option>Fiction</option>
+              </select>
+              <div *ngIf="category.invalid && category.touched" class="text-danger">
+                Category is required.
+              </div>
+            </div>
+  
+            <div class="col-md-6">
+              <label for="year" class="form-label">Year</label>
+              <input
+                type="number"
+                class="form-control"
+                id="year"
+                name="year"
+                [(ngModel)]="book.year"
+              />
+            </div>
+  
+            <div class="col-md-6">
+              <label for="published" class="form-label">Published Date *</label>
+              <input
+                type="date"
+                class="form-control"
+                id="published"
+                name="published"
+                required
+                [(ngModel)]="book.published"
+                #published="ngModel"
+              />
+              <div *ngIf="published.invalid && published.touched" class="text-danger">
+                Published date is required.
+              </div>
+            </div>
+          </div>
+  
+          <div class="d-flex justify-content-end gap-2 mt-4">
+            <button type="submit" class="btn btn-brown text-white" [disabled]="form.invalid">
+              <i class="bi bi-save me-1"></i> Save
+            </button>
+            <button type="button" class="btn btn-outline-secondary" (click)="cancel()">
+              <i class="bi bi-x-circle me-1"></i> Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
