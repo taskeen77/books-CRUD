@@ -1,5 +1,4 @@
-{
-  "books": [
+[
     {
       "id": 1,
       "title": "The Great Gatsby",
@@ -137,12 +136,12 @@
     },
     {
       "id": 16,
-      "title": "Kite runner",
-      "author": " Khaled Hosseini",
-      "category": "Fiction",
-      "published": "2013-06-14",
+      "title": "Kite Runner",
+      "author": "Khaled Hosseini",
       "genre": "History",
-      "year": 2013
+      "year": 2013,
+      "category": "Fiction",
+      "published": "2013-06-14"
     }
   ]
-}
+  
